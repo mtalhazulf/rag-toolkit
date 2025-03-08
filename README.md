@@ -197,3 +197,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - [Cloudflare Pages](https://pages.cloudflare.com/) - Edge hosting platform
 - [OpenAI](https://openai.com/) - For embeddings API
 - [Tailwind CSS](https://tailwindcss.com/) - For styling
+- [Big Help from brandonstarxel]([brandonstarxel](https://github.com/brandonstarxel/chunking_evaluation.git))
