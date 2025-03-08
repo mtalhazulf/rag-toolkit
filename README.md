@@ -1,67 +1,199 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`c3`](https://developers.cloudflare.com/pages/get-started/c3).
+# Text Chunking & RAG System
 
-## Getting Started
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Next.js](https://img.shields.io/badge/Next.js-15.1.6-black)
+![React](https://img.shields.io/badge/React-19.0.0-blue)
+![Cloudflare](https://img.shields.io/badge/Cloudflare%20Pages-ready-orange)
 
-First, run the development server:
+A powerful, flexible text chunking and Retrieval-Augmented Generation (RAG) system built with Next.js and deployed on Cloudflare Pages. This application provides multiple text chunking strategies and a complete RAG pipeline for semantic search and retrieval.
+
+## 🚀 Features
+
+- **Multiple Chunking Methods**:
+  - Fixed-length (tokens or characters)
+  - Recursive text splitting
+  - Sentence-based
+  - Paragraph-based
+  - Sliding window
+  - Semantic chunking
+  - Hybrid approaches
+  - Agentic chunking
+
+- **Complete RAG Pipeline**:
+  - Text chunking
+  - Embedding generation
+  - Vector similarity search
+  - Query processing
+
+- **User-Friendly Interface**:
+  - Interactive chunk visualization
+  - Real-time analysis
+  - JSON export
+  - Sample text integration
+
+- **Advanced Features**:
+  - Customizable chunk size and overlap
+  - Token counting
+  - Performance metrics
+  - Embedding visualization
+
+- **Optimized for Cloudflare**:
+  - Seamless deployment to Cloudflare Pages
+  - Integration with Cloudflare KV for storage
+  - Edge-optimized performance
+
+## 📋 Prerequisites
+
+- [Node.js](https://nodejs.org/) (v18 or higher)
+- [Bun](https://bun.sh/) (recommended for faster development)
+- [Cloudflare account](https://dash.cloudflare.com/sign-up) (for deployment)
+
+## 🔧 Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/text-chunking-rag.git
+   cd text-chunking-rag
+   ```
+
+2. Install dependencies:
+   ```bash
+   # Using npm
+   npm install
+   
+   # Using Bun (recommended)
+   bun install
+   ```
+
+3. Set up environment variables (optional):
+   Create a `.env.local` file in the root directory with your API keys if needed:
+   ```
+   OPENAI_API_KEY=your_openai_api_key
+   ```
+
+## 💻 Development
+
+Run the development server:
 
 ```bash
+# Using npm
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
+
+# Using Bun (recommended)
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the application.
 
-## Cloudflare integration
+## 🏗️ Building for Production
 
-Besides the `dev` script mentioned above `c3` has added a few extra scripts that allow you to integrate the application with the [Cloudflare Pages](https://pages.cloudflare.com/) environment, these are:
-  - `pages:build` to build the application for Pages using the [`@cloudflare/next-on-pages`](https://github.com/cloudflare/next-on-pages) CLI
-  - `preview` to locally preview your Pages application using the [Wrangler](https://developers.cloudflare.com/workers/wrangler/) CLI
-  - `deploy` to deploy your Pages application using the [Wrangler](https://developers.cloudflare.com/workers/wrangler/) CLI
+Build the application for production:
 
-> __Note:__ while the `dev` script is optimal for local development you should preview your Pages application as well (periodically or before deployments) in order to make sure that it can properly work in the Pages environment (for more details see the [`@cloudflare/next-on-pages` recommended workflow](https://github.com/cloudflare/next-on-pages/blob/main/internal-packages/next-dev/README.md#recommended-development-workflow))
+```bash
+# Using npm
+npm run build
 
-### Bindings
+# Using Bun
+bun run build
+```
 
-Cloudflare [Bindings](https://developers.cloudflare.com/pages/functions/bindings/) are what allows you to interact with resources available in the Cloudflare Platform.
+## ☁️ Cloudflare Deployment
 
-You can use bindings during development, when previewing locally your application and of course in the deployed application:
+This project is optimized for Cloudflare Pages deployment:
 
-- To use bindings in dev mode you need to define them in the `next.config.js` file under `setupDevBindings`, this mode uses the `next-dev` `@cloudflare/next-on-pages` submodule. For more details see its [documentation](https://github.com/cloudflare/next-on-pages/blob/05b6256/internal-packages/next-dev/README.md).
+1. Build for Cloudflare Pages:
+   ```bash
+   bun run pages:build
+   ```
 
-- To use bindings in the preview mode you need to add them to the `pages:preview` script accordingly to the `wrangler pages dev` command. For more details see its [documentation](https://developers.cloudflare.com/workers/wrangler/commands/#dev-1) or the [Pages Bindings documentation](https://developers.cloudflare.com/pages/functions/bindings/).
+2. Preview locally:
+   ```bash
+   bun run preview
+   ```
 
-- To use bindings in the deployed application you will need to configure them in the Cloudflare [dashboard](https://dash.cloudflare.com/). For more details see the  [Pages Bindings documentation](https://developers.cloudflare.com/pages/functions/bindings/).
+3. Deploy to Cloudflare Pages:
+   ```bash
+   bun run deploy
+   ```
 
-#### KV Example
+### Cloudflare Bindings
 
-`c3` has added for you an example showing how you can use a KV binding.
+To use Cloudflare Bindings:
 
-In order to enable the example:
-- Search for javascript/typescript lines containing the following comment:
-  ```ts
-  // KV Example:
-  ```
-  and uncomment the commented lines below it (also uncomment the relevant imports).
-- In the `wrangler.jsonc` file add the following configuration line:
-  ```
-  "kv_namespaces": [{ "binding": "MY_KV_NAMESPACE", "id": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" }],
-  ```
-- If you're using TypeScript run the `cf-typegen` script to update the `env.d.ts` file:
-  ```bash
-  npm run cf-typegen
-  # or
-  yarn cf-typegen
-  # or
-  pnpm cf-typegen
-  # or
-  bun cf-typegen
-  ```
+- For development: Define bindings in `next.config.js` under `setupDevBindings`
+- For preview: Add bindings to the `pages:preview` script
+- For production: Configure bindings in the Cloudflare dashboard
 
-After doing this you can run the `dev` or `preview` script and visit the `/api/hello` route to see the example in action.
+See the [Cloudflare Pages Bindings documentation](https://developers.cloudflare.com/pages/functions/bindings/) for more details.
 
-Finally, if you also want to see the example work in the deployed application make sure to add a `MY_KV_NAMESPACE` binding to your Pages application in its [dashboard kv bindings settings section](https://dash.cloudflare.com/?to=/:account/pages/view/:pages-project/settings/functions#kv_namespace_bindings_section). After having configured it make sure to re-deploy your application.
+## 📊 Usage Examples
+
+### Basic Text Chunking
+
+1. Enter or paste your text in the input area
+2. Select a chunking method (e.g., "Fixed Length")
+3. Configure chunking options (chunk size, overlap)
+4. Click "Process Text"
+5. View and analyze the resulting chunks
+
+### RAG Pipeline
+
+1. Process your text using any chunking method
+2. Click "Finalize Chunks" to prepare for RAG
+3. Enter your OpenAI API key (for embeddings)
+4. Click "Generate Embeddings"
+5. Enter a query in the search box
+6. View semantically similar chunks
+
+## 🧩 Project Structure
+
+```
+├── public/             # Static assets
+├── scripts/            # Build and utility scripts
+├── src/
+│   ├── app/            # Next.js App Router pages
+│   │   ├── components/     # React components
+│   │   │   ├── chunking/   # Chunking UI components
+│   │   │   ├── rag/        # RAG interface components
+│   │   │   └── ui/         # Shared UI components
+│   │   └── lib/            # Core functionality
+│   │       └── chunking.ts # Text chunking algorithms
+│   └── types/              # TypeScript type definitions
+│   └── .wrangler/          # Cloudflare Wrangler configuration
+│   └── next.config.ts      # Next.js configuration
+└── wrangler.jsonc      # Cloudflare Wrangler configuration
+```
+
+## 🔍 SEO Implementation
+
+This project includes comprehensive SEO features:
+
+- Metadata configuration using Next.js App Router
+- OpenGraph and Twitter card metadata
+- JSON-LD structured data
+- Dynamic OG image generation
+- Sitemap generation
+- Robots.txt configuration
+
+See [SEO.md](SEO.md) for implementation details.
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 🙏 Acknowledgements
+
+- [Next.js](https://nextjs.org/) - The React Framework
+- [Cloudflare Pages](https://pages.cloudflare.com/) - Edge hosting platform
+- [OpenAI](https://openai.com/) - For embeddings API
+- [Tailwind CSS](https://tailwindcss.com/) - For styling

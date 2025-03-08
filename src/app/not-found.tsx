@@ -1,9 +1,17 @@
+import { Metadata } from 'next';
+import Link from 'next/link';
+
 export const runtime = "edge";
+
+export const metadata: Metadata = {
+  title: 'Page Not Found - 404 Error | Text Chunking & RAG System',
+  description: 'The page you are looking for could not be found. Please check the URL or navigate back to the homepage.',
+  robots: 'noindex, nofollow',
+};
 
 export default function NotFound() {
   return (
     <>
-      <title>404: This page could not be found.</title>
       <div style={styles.error}>
         <div>
           <style
@@ -16,6 +24,12 @@ export default function NotFound() {
           </h1>
           <div style={styles.desc}>
             <h2 style={styles.h2}>This page could not be found.</h2>
+            <p style={styles.p}>
+              The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
+            </p>
+            <Link href="/" style={styles.link}>
+              Return to Homepage
+            </Link>
           </div>
         </div>
       </div>
@@ -34,11 +48,9 @@ const styles = {
     alignItems: "center",
     justifyContent: "center",
   },
-
   desc: {
     display: "inline-block",
   },
-
   h1: {
     display: "inline-block",
     margin: "0 20px 0 0",
@@ -48,11 +60,25 @@ const styles = {
     verticalAlign: "top",
     lineHeight: "49px",
   },
-
   h2: {
     fontSize: 14,
     fontWeight: 400,
     lineHeight: "49px",
     margin: 0,
+  },
+  p: {
+    margin: "10px 0",
+    fontSize: 14,
+    lineHeight: "20px",
+  },
+  link: {
+    display: "inline-block",
+    margin: "20px 0",
+    padding: "10px 15px",
+    backgroundColor: "#0070f3",
+    color: "#fff",
+    textDecoration: "none",
+    borderRadius: "5px",
+    fontSize: 14,
   },
 } as const;
