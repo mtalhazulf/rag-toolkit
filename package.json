@@ -1,5 +1,5 @@
 {
-	"name": "broad-wood-ffbe",
+	"name": "rag-toolkit",
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
@@ -13,9 +13,10 @@
 		"cf-typegen": "wrangler types --env-interface CloudflareEnv env.d.ts"
 	},
 	"dependencies": {
+		"@tailwindcss/postcss": "^4.0.12",
+		"next": "15.1.6",
 		"react": "^19.0.0",
-		"react-dom": "^19.0.0",
-		"next": "15.1.6"
+		"react-dom": "^19.0.0"
 	},
 	"devDependencies": {
 		"@cloudflare/next-on-pages": "^1.13.9",
@@ -30,7 +31,8 @@
 		"tailwindcss": "^4.0.12",
 		"typescript": "^5.8.2",
 		"vercel": "^41.3.2",
-		"wrangler": "^3.114.0"
+		"wrangler": "^3.114.0",
+		"@tailwindcss/postcss": "^1.0.0"
 	},
 	"packageManager": "yarn@3.5.1+sha512.8cd0e31bd60779ef4ca92b855fb3462c7ec35ce8b345752b7349a68239776417f46d41d79c8047242d9c93b48a1516f64c7444ebe747d9a02bf26868e6fa1f2b"
 }

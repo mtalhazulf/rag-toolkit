@@ -1,9 +1,10 @@
-# Text Chunking & RAG System
+# RAG Toolkit
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Next.js](https://img.shields.io/badge/Next.js-15.1.6-black)
 ![React](https://img.shields.io/badge/React-19.0.0-blue)
 ![Cloudflare](https://img.shields.io/badge/Cloudflare%20Pages-ready-orange)
+![Vercel](https://img.shields.io/badge/Vercel-ready-black)
 
 A powerful, flexible text chunking and Retrieval-Augmented Generation (RAG) system built with Next.js and deployed on Cloudflare Pages. This application provides multiple text chunking strategies and a complete RAG pipeline for semantic search and retrieval.
 
@@ -52,8 +53,8 @@ A powerful, flexible text chunking and Retrieval-Augmented Generation (RAG) syst
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/text-chunking-rag.git
-   cd text-chunking-rag
+   git clone https://github.com/yourusername/rag-toolkit.git
+   cd rag-toolkit
    ```
 
 2. Install dependencies:
