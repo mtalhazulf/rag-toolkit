@@ -1,12 +1,11 @@
 # RAG Toolkit
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![Next.js](https://img.shields.io/badge/Next.js-15.1.6-black)
+![Next.js](https://img.shields.io/badge/Next.js-15.2.1-black)
 ![React](https://img.shields.io/badge/React-19.0.0-blue)
-![Cloudflare](https://img.shields.io/badge/Cloudflare%20Pages-ready-orange)
 ![Vercel](https://img.shields.io/badge/Vercel-ready-black)
 
-A powerful, flexible text chunking and Retrieval-Augmented Generation (RAG) system built with Next.js and deployed on Cloudflare Pages. This application provides multiple text chunking strategies and a complete RAG pipeline for semantic search and retrieval.
+A powerful, flexible text chunking and Retrieval-Augmented Generation (RAG) system built with Next.js and deployed on Vercel. This application provides multiple text chunking strategies and a complete RAG pipeline for semantic search and retrieval.
 
 ## 🚀 Features
 
@@ -38,16 +37,15 @@ A powerful, flexible text chunking and Retrieval-Augmented Generation (RAG) syst
   - Performance metrics
   - Embedding visualization
 
-- **Optimized for Cloudflare**:
-  - Seamless deployment to Cloudflare Pages
-  - Integration with Cloudflare KV for storage
-  - Edge-optimized performance
+- **Optimized for Performance**:
+  - Fast processing
+  - Responsive UI
+  - Edge-optimized deployment
 
 ## 📋 Prerequisites
 
 - [Node.js](https://nodejs.org/) (v18 or higher)
 - [Bun](https://bun.sh/) (recommended for faster development)
-- [Cloudflare account](https://dash.cloudflare.com/sign-up) (for deployment)
 
 ## 🔧 Installation
 
@@ -98,34 +96,24 @@ npm run build
 bun run build
 ```
 
-## ☁️ Cloudflare Deployment
+## ☁️ Vercel Deployment
 
-This project is optimized for Cloudflare Pages deployment:
+This project is optimized for Vercel deployment:
 
-1. Build for Cloudflare Pages:
-   ```bash
-   bun run pages:build
-   ```
+1. Push your code to a GitHub repository
+2. Import the repository in Vercel
+3. Configure your deployment settings
+4. Deploy!
 
-2. Preview locally:
-   ```bash
-   bun run preview
-   ```
+You can also use the Vercel CLI for deployment:
 
-3. Deploy to Cloudflare Pages:
-   ```bash
-   bun run deploy
-   ```
+```bash
+# Install Vercel CLI if you haven't already
+npm install -g vercel
 
-### Cloudflare Bindings
-
-To use Cloudflare Bindings:
-
-- For development: Define bindings in `next.config.js` under `setupDevBindings`
-- For preview: Add bindings to the `pages:preview` script
-- For production: Configure bindings in the Cloudflare dashboard
-
-See the [Cloudflare Pages Bindings documentation](https://developers.cloudflare.com/pages/functions/bindings/) for more details.
+# Deploy to Vercel
+vercel
+```
 
 ## 📊 Usage Examples
 
@@ -150,7 +138,6 @@ See the [Cloudflare Pages Bindings documentation](https://developers.cloudflare.
 
 ```
 ├── public/             # Static assets
-├── scripts/            # Build and utility scripts
 ├── src/
 │   ├── app/            # Next.js App Router pages
 │   │   ├── components/     # React components
@@ -160,9 +147,7 @@ See the [Cloudflare Pages Bindings documentation](https://developers.cloudflare.
 │   │   └── lib/            # Core functionality
 │   │       └── chunking.ts # Text chunking algorithms
 │   └── types/              # TypeScript type definitions
-│   └── .wrangler/          # Cloudflare Wrangler configuration
-│   └── next.config.ts      # Next.js configuration
-└── wrangler.jsonc      # Cloudflare Wrangler configuration
+└── next.config.ts      # Next.js configuration
 ```
 
 ## 🔍 SEO Implementation
@@ -195,7 +180,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## 🙏 Acknowledgements
 
 - [Next.js](https://nextjs.org/) - The React Framework
-- [Cloudflare Pages](https://pages.cloudflare.com/) - Edge hosting platform
+- [Vercel](https://vercel.com/) - Edge hosting platform
 - [OpenAI](https://openai.com/) - For embeddings API
 - [Tailwind CSS](https://tailwindcss.com/) - For styling
 - Big Help from [brandonstarxel](https://github.com/brandonstarxel/chunking_evaluation.git)

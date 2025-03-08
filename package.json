@@ -6,11 +6,7 @@
 		"dev": "next dev --turbopack",
 		"build": "next build",
 		"start": "next start",
-		"lint": "next lint",
-		"pages:build": "bunx @cloudflare/next-on-pages",
-		"preview": "bun pages:build && wrangler pages dev",
-		"deploy": "bun pages:build && wrangler pages deploy",
-		"cf-typegen": "wrangler types --env-interface CloudflareEnv env.d.ts"
+		"lint": "next lint"
 	},
 	"dependencies": {
 		"next": "15.2.1",
@@ -18,9 +14,6 @@
 		"react-dom": "^19.0.0"
 	},
 	"devDependencies": {
-		"@cloudflare/next-on-pages": "^1.13.9",
-		"@cloudflare/workers-types": "^4.20250303.0",
-		"@eslint/eslintrc": "^3.3.0",
 		"@types/node": "^22.13.10",
 		"@types/react": "^19.0.10",
 		"@types/react-dom": "^19.0.4",
@@ -30,8 +23,6 @@
 		"postcss": "^8.5.3",
 		"tailwindcss": "^3.4.1",
 		"typescript": "^5.8.2",
-		"vercel": "^41.3.2",
-		"wrangler": "^3.114.0"
-	},
-	"packageManager": "yarn@3.5.1+sha512.8cd0e31bd60779ef4ca92b855fb3462c7ec35ce8b345752b7349a68239776417f46d41d79c8047242d9c93b48a1516f64c7444ebe747d9a02bf26868e6fa1f2b"
+		"vercel": "^41.3.2"
+	}
 }
